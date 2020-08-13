@@ -1,24 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import bin from './bin.svg'
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button, TextField } from '@material-ui/core';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header">
+        ŠEVA NK MALEČNIK - ČLANI 
       </header>
+      <div className="body">
+        <div className='newUser'>
+          <TextField label='Ime in priimek'></TextField>
+          <Button>Dodaj</Button>
+        </div>
+        <TableContainer>
+          <Table className="list">
+            <TableHead>
+              <TableRow>
+                <TableCell>Ime</TableCell>
+                <TableCell>Stevilo</TableCell>
+                <TableCell>Urejanje</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell>Ziga Lah</TableCell>
+                <TableCell>2</TableCell>
+                <TableCell>
+                  <div className='editing'>
+                      <Button>+</Button>
+                      <Button>-</Button>
+                      <Button>
+                        <img src={bin} alt="bin"></img>
+                      </Button>
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </div>
   );
 }
